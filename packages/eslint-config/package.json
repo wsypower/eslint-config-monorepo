@@ -4,6 +4,11 @@
   "description": "Wsy's ESLint config",
   "author": "wsypower",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wsypower/eslint-config-monorepo.git",
+    "directory": "packages/eslint-config"
+  },
   "keywords": [
     "eslint",
     "eslint-config",
