@@ -1,6 +1,6 @@
 {
   "name": "@wsyc/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Wsy's ESLint config",
   "author": "wsypower",
   "license": "MIT",
