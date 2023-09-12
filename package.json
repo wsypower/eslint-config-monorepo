@@ -1,6 +1,6 @@
 {
   "name": "@wsyc/eslint-config-monorepo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "",
   "author": "",
@@ -8,10 +8,11 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "bumpp -r "
   },
   "devDependencies": {
     "@wsyc/eslint-config": "workspace:^",
+    "bumpp": "^9.2.0",
     "eslint": "^8.49.0"
   }
 }

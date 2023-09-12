@@ -1,6 +1,6 @@
 {
   "name": "@wsyc/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wsy's ESLint config",
   "author": "wsypower",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "eslint": "^8.38.0"
+    "eslint": "^8.49.0"
   },
   "dependencies": {
     "@antfu/eslint-config": "^0.41.0"
