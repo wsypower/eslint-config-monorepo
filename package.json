@@ -14,5 +14,8 @@
     "@wsyc/eslint-config": "workspace:^",
     "bumpp": "^9.2.0",
     "eslint": "^8.49.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
