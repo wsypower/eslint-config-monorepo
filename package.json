@@ -12,8 +12,11 @@
     "publish:npm": "pnpm -r publish --access public --no-git-checks"
   },
   "devDependencies": {
+    "@types/node": "^20.6.0",
     "@wsyc/eslint-config": "workspace:^",
     "bumpp": "^9.2.0",
-    "eslint": "^8.49.0"
+    "eslint": "^8.49.0",
+    "typescript": "^5.2.2",
+    "unbuild": "^2.0.0"
   }
 }

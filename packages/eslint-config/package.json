@@ -14,12 +14,19 @@
     "eslint-config",
     "eslint-config-wsyc"
   ],
-  "main": "index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
   "files": [
-    "index.js"
+    "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "stub": "unbuild --stub",
+    "build": "unbuild"
   },
   "peerDependencies": {
     "eslint": "^8.49.0"
