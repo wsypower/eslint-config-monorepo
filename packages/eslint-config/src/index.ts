@@ -1,5 +1,7 @@
-export default {
+import { defineConfig } from 'eslint-define-config'
+
+export default defineConfig({
   extends: [
     '@antfu',
   ],
-}
+})

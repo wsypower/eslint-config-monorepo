@@ -16,6 +16,7 @@
     "@wsyc/eslint-config": "workspace:^",
     "bumpp": "^9.2.0",
     "eslint": "^8.49.0",
+    "eslint-define-config": "^1.23.0",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0"
   }
