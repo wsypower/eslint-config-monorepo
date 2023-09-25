@@ -9,17 +9,14 @@ export default defineConfig({
         parser: '@typescript-eslint/parser',
       },
       rules: {
-        // --------------------------------------------
-        // Priority B: Strongly Recommended
-        // --------------------------------------------
         'vue/max-attributes-per-line': [
           'error',
           {
             singleline: {
-              max: 1,
+              max: 3,
             },
             multiline: {
-              max: 1,
+              max: 3,
             },
           },
         ],
@@ -82,11 +79,9 @@ export default defineConfig({
           useSlots: 'slots',
           useAttrs: 'attrs',
         }],
-
         'vue/require-typed-object-prop': ['error'],
         'vue/eqeqeq': ['error'],
       },
     },
   ],
-
 })
