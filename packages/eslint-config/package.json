@@ -29,10 +29,10 @@
     "build": "unbuild"
   },
   "peerDependencies": {
-    "eslint": "^8.49.0"
+    "eslint": "^8.50.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^0.41.0",
+    "@antfu/eslint-config": "^0.41.4",
     "@wsyc/eslint-config-vue": "workspace:^"
   }
 }
