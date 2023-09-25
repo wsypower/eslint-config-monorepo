@@ -13,10 +13,10 @@ export default defineConfig({
           'error',
           {
             singleline: {
-              max: 3,
+              max: 1,
             },
             multiline: {
-              max: 3,
+              max: 1,
             },
           },
         ],
