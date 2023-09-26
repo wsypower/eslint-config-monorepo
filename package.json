@@ -8,6 +8,8 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
+    "build": "turbo build",
+    "release:build": "turbo release",
     "release": "bumpp -r",
     "publish:npm": "pnpm -r publish --access public --no-git-checks"
   },
@@ -16,7 +18,9 @@
     "@wsyc/eslint-config": "workspace:^",
     "bumpp": "^9.2.0",
     "eslint": "^8.49.0",
+    "eslint-config-turbo": "^1.10.14",
     "eslint-define-config": "^1.23.0",
+    "turbo": "^1.10.14",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0"
   }
