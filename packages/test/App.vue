@@ -2,21 +2,22 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-09-12 20:11:59
- * @LastEditTime: 2023-09-25 22:49:56
+ * @LastEditTime: 2023-09-26 21:54:26
  * @LastEditors: wsy
 -->
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <div>
     <a
-      href="https://vitejs.dev" target="_blank" foo="1"
-      a="2" c="3333"
+      href="https://vitejs.dev"
+      target="_blank"
+      foo="1"
+      a="2"
+      c="3333"
     />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>

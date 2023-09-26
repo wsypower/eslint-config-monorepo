@@ -18,12 +18,12 @@
     "stub": "unbuild --stub",
     "build": "unbuild"
   },
+  "peerDependencies": {
+    "eslint": "^8.49.0"
+  },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.7.2",
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0"
-  },
-  "peerDependencies": {
-    "eslint": "^8.49.0"
   }
 }
