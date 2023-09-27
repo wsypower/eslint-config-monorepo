@@ -13,10 +13,6 @@
     "stub": {
       "dependsOn": ["^stub"],
       "cache": false
-    },
-    "//#release": {
-      "dependsOn": ["build"],
-      "outputMode": "hash-only"
     }
   }
 }
