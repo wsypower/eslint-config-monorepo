@@ -1,0 +1,30 @@
+{
+  "name": "@wsyc/eslint-plugin",
+  "version": "1.0.0",
+  "description": "Wsy's ESLint plugin",
+  "author": "wsypower",
+  "license": "ISC",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "stub": "unbuild --stub",
+    "build": "unbuild"
+  },
+  "peerDependencies": {
+    "eslint": "^8.49.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/utils": "^6.7.3"
+  }
+}

@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^0.41.4",
-    "@wsyc/eslint-config-vue": "workspace:^"
+    "@wsyc/eslint-config-vue": "workspace:^",
+    "@wsyc/eslint-plugin": "workspace:^"
   },
   "devDependencies": {
     "eslint": "^8.49.0"
