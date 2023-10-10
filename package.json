@@ -12,7 +12,8 @@
     "stub": "turbo stub",
     "release": "bumpp -r",
     "publish:npm": "pnpm -r publish --access public --no-git-checks",
-    "publish:build": "pnpm run build && pnpm run publish:npm"
+    "publish:build": "pnpm run build && pnpm run publish:npm",
+    "lint": "pnpm eslint ./packages/test/api-prefix.api.js"
   },
   "devDependencies": {
     "@types/node": "^20.6.0",
@@ -21,6 +22,7 @@
     "eslint": "^8.49.0",
     "eslint-config-turbo": "^1.10.14",
     "eslint-define-config": "^1.23.0",
+    "eslint-plugin-wsyc": "workspace:^",
     "turbo": "^1.10.14",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0"

@@ -1,5 +1,5 @@
 {
-  "name": "@wsyc/eslint-plugin",
+  "name": "eslint-plugin-wsyc",
   "version": "1.0.0",
   "description": "Wsy's ESLint plugin",
   "author": "wsypower",
@@ -11,6 +11,7 @@
     }
   },
   "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "files": [
     "dist"
   ],
@@ -21,10 +22,10 @@
   "peerDependencies": {
     "eslint": "^8.49.0"
   },
-  "devDependencies": {
-    "eslint": "^8.49.0"
-  },
   "dependencies": {
     "@typescript-eslint/utils": "^6.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0"
   }
 }

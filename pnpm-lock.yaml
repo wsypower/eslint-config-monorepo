@@ -26,6 +26,9 @@ importers:
       eslint-define-config:
         specifier: ^1.23.0
         version: 1.23.0
+      eslint-plugin-wsyc:
+        specifier: workspace:^
+        version: link:packages/eslint-plugin
       turbo:
         specifier: ^1.10.14
         version: 1.10.14
@@ -44,7 +47,7 @@ importers:
       '@wsyc/eslint-config-vue':
         specifier: workspace:^
         version: link:../eslint-config-vue
-      '@wsyc/eslint-plugin':
+      eslint-plugin-wsyc:
         specifier: workspace:^
         version: link:../eslint-plugin
     devDependencies:
@@ -69,12 +72,6 @@ importers:
       '@typescript-eslint/utils':
         specifier: ^6.7.3
         version: 6.7.3(eslint@8.49.0)(typescript@5.2.2)
-    devDependencies:
-      eslint:
-        specifier: ^8.49.0
-        version: 8.49.0
-
-  packages/eslint-plugin-wsy:
     devDependencies:
       eslint:
         specifier: ^8.49.0

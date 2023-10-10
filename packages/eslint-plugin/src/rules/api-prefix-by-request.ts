@@ -2,7 +2,7 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-09-28 15:06:47
- * @LastEditTime: 2023-09-28 15:38:57
+ * @LastEditTime: 2023-10-10 18:50:55
  * @LastEditors: wsy
  */
 import { createEslintRule } from '../utils'
@@ -22,7 +22,7 @@ export default createEslintRule<Options, MessageIds>({
     fixable: 'code',
     schema: [],
     messages: {
-      missingPrefix: 'api prefix by request',
+      missingPrefix: '这是测试哦~~~',
     },
   },
   defaultOptions: [],
