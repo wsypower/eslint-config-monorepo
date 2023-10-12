@@ -2,7 +2,7 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-09-28 15:06:47
- * @LastEditTime: 2023-10-10 18:50:55
+ * @LastEditTime: 2023-10-12 19:44:16
  * @LastEditors: wsy
  */
 import { createEslintRule } from '../utils'
@@ -20,19 +20,62 @@ export default createEslintRule<Options, MessageIds>({
       recommended: 'stylistic',
     },
     fixable: 'code',
-    schema: [],
+    schema: [
+      {
+        type: 'object',
+        properties: {
+          allowImplicit: {
+            type: 'boolean',
+            default: false,
+          },
+          checkForEach: {
+            type: 'boolean',
+            default: false,
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
     messages: {
-      missingPrefix: '这是测试哦~~~',
+      missingPrefix: 'Property {{name}} should start with "API_"',
     },
   },
   defaultOptions: [],
   create(context) {
+    function isDefineRequest(node) {
+      if (node.type !== 'CallExpression')
+        return false
+      const callee = node.callee
+      return (callee.type === 'Identifier' && callee.name === 'defineRequest')
+    }
+
+    function isType(node, type) {
+      return node.type === type
+    }
     return {
-      Identifier() {
-        context.report({
-          messageId: 'missingPrefix',
-          node: context.getSourceCode().ast,
-        })
+      ObjectExpression(node) {
+        if (
+          isType(node.parent, 'ArrowFunctionExpression')
+          && isType(node.parent.parent, 'CallExpression')
+          && isDefineRequest(node.parent.parent)
+        ) {
+          node.properties.forEach((property) => {
+            if (property.type !== 'Property')
+              return
+
+            if (property.key.type === 'Identifier' && !property.key.name.startsWith('API_')) {
+              const name = property.key.name
+              context.report({
+                node: property.key,
+                data: { name },
+                messageId: 'missingPrefix',
+                fix(fixer) {
+                  return fixer.replaceText(property.key, `API_${name}`)
+                },
+              })
+            }
+          })
+        }
       },
     }
   },
