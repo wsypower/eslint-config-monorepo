@@ -2,7 +2,7 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-09-28 15:06:47
- * @LastEditTime: 2023-10-12 19:44:16
+ * @LastEditTime: 2023-10-13 15:32:27
  * @LastEditors: wsy
  */
 import { createEslintRule } from '../utils'
@@ -16,26 +16,11 @@ export default createEslintRule<Options, MessageIds>({
   meta: {
     type: 'problem',
     docs: {
-      description: 'Newline after if',
+      description: 'Api method should start with "API_"',
       recommended: 'stylistic',
     },
     fixable: 'code',
-    schema: [
-      {
-        type: 'object',
-        properties: {
-          allowImplicit: {
-            type: 'boolean',
-            default: false,
-          },
-          checkForEach: {
-            type: 'boolean',
-            default: false,
-          },
-        },
-        additionalProperties: false,
-      },
-    ],
+    schema: [],
     messages: {
       missingPrefix: 'Property {{name}} should start with "API_"',
     },
@@ -43,8 +28,9 @@ export default createEslintRule<Options, MessageIds>({
   defaultOptions: [],
   create(context) {
     function isDefineRequest(node) {
-      if (node.type !== 'CallExpression')
+      if (node.type !== 'CallExpression') {
         return false
+      }
       const callee = node.callee
       return (callee.type === 'Identifier' && callee.name === 'defineRequest')
     }
@@ -60,8 +46,9 @@ export default createEslintRule<Options, MessageIds>({
           && isDefineRequest(node.parent.parent)
         ) {
           node.properties.forEach((property) => {
-            if (property.type !== 'Property')
+            if (property.type !== 'Property') {
               return
+            }
 
             if (property.key.type === 'Identifier' && !property.key.name.startsWith('API_')) {
               const name = property.key.name

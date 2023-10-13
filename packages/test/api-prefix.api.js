@@ -2,9 +2,10 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-09-28 15:41:01
- * @LastEditTime: 2023-10-12 19:43:38
+ * @LastEditTime: 2023-10-13 08:28:33
  * @LastEditors: wsy
  */
+
 function defineRequest() { }
 
 export default defineRequest(({ request }) => ({
@@ -23,7 +24,3 @@ export default defineRequest(({ request }) => ({
     })
   },
 }))
-
-const obj = {
-  a: '1',
-}
