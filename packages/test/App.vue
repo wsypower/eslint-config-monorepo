@@ -2,7 +2,7 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-09-12 20:11:59
- * @LastEditTime: 2023-09-26 21:54:26
+ * @LastEditTime: 2023-10-16 18:58:04
  * @LastEditors: wsy
 -->
 <script setup lang="ts">
@@ -10,13 +10,7 @@
 
 <template>
   <div>
-    <a
-      href="https://vitejs.dev"
-      target="_blank"
-      foo="1"
-      a="2"
-      c="3333"
-    />
+    <a href="https://vitejs.dev" target="_blank" foo="1" a="2" c="3333" />
   </div>
 </template>
 

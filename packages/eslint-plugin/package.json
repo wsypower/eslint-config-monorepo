@@ -23,7 +23,8 @@
     "eslint": "^8.49.0"
   },
   "dependencies": {
-    "@typescript-eslint/utils": "^6.7.5"
+    "@typescript-eslint/utils": "^6.7.5",
+    "eslint-plugin-vue": "^9.17.0"
   },
   "devDependencies": {
     "eslint": "^8.49.0"

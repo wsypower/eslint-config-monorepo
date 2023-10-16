@@ -33,7 +33,10 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^0.41.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.2",
     "@wsyc/eslint-config-vue": "workspace:^",
+    "eslint-plugin-vue": "^9.17.0",
     "eslint-plugin-wsyc": "workspace:^"
   },
   "devDependencies": {

@@ -1,3 +1,10 @@
+/*
+ * @Description: vue eslint 配置
+ * @Author: wsy
+ * @Date: 2023-09-28 14:17:39
+ * @LastEditTime: 2023-10-16 15:26:12
+ * @LastEditors: wsy
+ */
 import { defineConfig } from 'eslint-define-config'
 
 export default defineConfig({
@@ -9,17 +16,17 @@ export default defineConfig({
         parser: '@typescript-eslint/parser',
       },
       rules: {
-        'vue/max-attributes-per-line': [
-          'error',
-          {
-            singleline: {
-              max: 1,
-            },
-            multiline: {
-              max: 1,
-            },
-          },
-        ],
+        // 'vue/max-attributes-per-line': [
+        //   'error',
+        //   {
+        //     singleline: {
+        //       max: 1,
+        //     },
+        //     multiline: {
+        //       max: 1,
+        //     },
+        //   },
+        // ],
         'vue/require-default-prop': [
           'error',
         ],
