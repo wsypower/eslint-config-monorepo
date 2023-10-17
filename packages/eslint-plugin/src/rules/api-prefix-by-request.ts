@@ -2,13 +2,13 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-09-28 15:06:47
- * @LastEditTime: 2023-10-17 18:51:27
+ * @LastEditTime: 2023-10-17 19:43:34
  * @LastEditors: wsy
  */
 import { createEslintRule } from '../utils'
 
 export const RULE_NAME = 'api-prefix-by-request'
-export type MessageIds = 'missingPrefix' | 'nameIsUppercase'
+export type MessageIds = 'missingPrefix'
 export type Options = []
 
 export default createEslintRule<Options, MessageIds>({
@@ -16,14 +16,13 @@ export default createEslintRule<Options, MessageIds>({
   meta: {
     type: 'problem',
     docs: {
-      description: 'Api method should start with "API_"',
+      description: 'Api Property must be Uppercase and prefixed with "API_"',
       recommended: 'stylistic',
     },
     fixable: 'code',
     schema: [],
     messages: {
-      missingPrefix: 'Property {{name}} should start with "API_"',
-      nameIsUppercase: 'Property {{name}} should be Uppercase',
+      missingPrefix: 'Property {{name}} must be Uppercase and prefixed with "API_"',
     },
   },
   defaultOptions: [],
@@ -51,23 +50,13 @@ export default createEslintRule<Options, MessageIds>({
               return
             }
             const name = property.key.name
-            if (!name.startsWith('API_')) {
+            if (!name.startsWith('API_') || name.toUpperCase() !== name) {
               context.report({
                 node: property.key,
                 data: { name },
                 messageId: 'missingPrefix',
                 fix(fixer) {
-                  return fixer.replaceText(property.key, `API_${name}`)
-                },
-              })
-            }
-            if (name.toUpperCase() !== name) {
-              context.report({
-                node: property.key,
-                data: { name },
-                messageId: 'nameIsUppercase',
-                fix(fixer) {
-                  return fixer.replaceText(property.key, name.toUpperCase())
+                  return fixer.replaceText(property.key, `API_${name.toUpperCase()}`)
                 },
               })
             }

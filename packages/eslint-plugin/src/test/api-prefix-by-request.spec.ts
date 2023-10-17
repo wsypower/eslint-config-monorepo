@@ -2,7 +2,7 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-10-17 15:29:57
- * @LastEditTime: 2023-10-17 17:24:01
+ * @LastEditTime: 2023-10-17 19:33:18
  * @LastEditors: wsy
  */
 import { RuleTester } from '@typescript-eslint/rule-tester'
@@ -27,11 +27,18 @@ const valids = [
       })
     }
   }))`,
+  `function test1(){
+     return request({
+        url: 'check/task/pageList',
+        method: 'get',
+        params,
+      })
+  }`,
 ]
 
 const invalids = [
-  [
-    `export default defineRequest(({ request }) => ({
+  {
+    code: `export default defineRequest(({ request }) => ({
       SAFECHECKLIST(params) {
         return request({
           url: 'check/task/pageList',
@@ -40,7 +47,7 @@ const invalids = [
         })
       }
     }))`,
-    `export default defineRequest(({ request }) => ({
+    output: `export default defineRequest(({ request }) => ({
       API_SAFECHECKLIST(params) {
         return request({
           url: 'check/task/pageList',
@@ -49,7 +56,33 @@ const invalids = [
         })
       }
     }))`,
-  ],
+    errors: [{ messageId: 'missingPrefix' }],
+  },
+  {
+    code: `export default defineRequest(({ request }) => ({
+      safechecklist(params) {
+        return request({
+          url: 'check/task/pageList',
+          method: 'get',
+          params,
+        })
+      }
+    }))`,
+    output: `export default defineRequest(({ request }) => ({
+      API_SAFECHECKLIST(params) {
+        return request({
+          url: 'check/task/pageList',
+          method: 'get',
+          params,
+        })
+      }
+    }))`,
+    errors: [
+      {
+        messageId: 'missingPrefix',
+      },
+    ],
+  },
 ]
 
 const ruleTester: RuleTester = new RuleTester({
@@ -58,11 +91,5 @@ const ruleTester: RuleTester = new RuleTester({
 
 ruleTester.run(RULE_NAME, apiPrefixByRequest as any, {
   valid: valids,
-  invalid: invalids.map(i => ({
-    code: i[0],
-    output: i[1],
-    errors: [
-      { messageId: 'missingPrefix' },
-    ],
-  })),
+  invalid: invalids,
 })
