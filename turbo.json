@@ -13,6 +13,9 @@
     "stub": {
       "dependsOn": ["^stub"],
       "cache": false
+    },
+    "test": {
+      "cache": false
     }
   }
 }

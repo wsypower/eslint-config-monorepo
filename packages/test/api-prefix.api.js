@@ -2,7 +2,7 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-09-28 15:41:01
- * @LastEditTime: 2023-10-13 08:28:33
+ * @LastEditTime: 2023-10-17 18:48:48
  * @LastEditors: wsy
  */
 
@@ -17,6 +17,13 @@ export default defineRequest(({ request }) => ({
     })
   },
   API_CHECKTYPELIST(params) {
+    return request({
+      url: 'check/task/taskCheckTypeList',
+      method: 'get',
+      params,
+    })
+  },
+  API_TEST(params) {
     return request({
       url: 'check/task/taskCheckTypeList',
       method: 'get',

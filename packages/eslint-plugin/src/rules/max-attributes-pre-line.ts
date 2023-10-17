@@ -2,7 +2,7 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-10-13 16:59:29
- * @LastEditTime: 2023-10-16 19:03:14
+ * @LastEditTime: 2023-10-16 19:50:31
  * @LastEditors: wsy
  */
 import type { ParserServices, Range, Token } from 'eslint-plugin-vue'
@@ -164,7 +164,7 @@ export default createEslintRule<Options, MessageIds>({
         }
 
         if (!isSingleLine(node)) {
-          console.log(node)
+          console.log('多行')
         }
       },
     })

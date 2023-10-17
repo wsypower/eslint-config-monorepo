@@ -10,7 +10,13 @@
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank" foo="1" a="2" c="3333" />
+    <a
+      href="https://vitejs.dev"
+      target="_blank"
+      foo="1"
+      a="2"
+      c="3333"
+    />
   </div>
 </template>
 
