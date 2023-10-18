@@ -2,7 +2,7 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-10-13 16:59:29
- * @LastEditTime: 2023-10-16 19:50:31
+ * @LastEditTime: 2023-10-18 15:04:54
  * @LastEditors: wsy
  */
 import type { ParserServices, Range, Token } from 'eslint-plugin-vue'
@@ -127,14 +127,13 @@ export default createEslintRule<Options, MessageIds>({
     const sourceCode = context.getSourceCode()
     const configuration = parseOptions(context.options[0])
     const multilineMaximum = configuration.multiline
-    const singlelinemMaximum = configuration.singleline
-    const filename = context.getFilename()
+    const singlelineMaximum = configuration.singleline
     const template
       = (context.parserServices as ParserServices).getTemplateBodyTokenStore
       && (context.parserServices as ParserServices).getTemplateBodyTokenStore()
 
     function showErrors(attributes) {
-      for (const [i, prop] of attributes.entries()) {
+      for (const [_, prop] of attributes.entries()) {
         context.report({
           node: prop,
           loc: prop.loc,
@@ -159,7 +158,7 @@ export default createEslintRule<Options, MessageIds>({
         if (!numberOfAttributes) {
           return
         }
-        if (isSingleLine(node) && numberOfAttributes > singlelinemMaximum) {
+        if (isSingleLine(node) && numberOfAttributes > singlelineMaximum) {
           showErrors(node.attributes)
         }
 
