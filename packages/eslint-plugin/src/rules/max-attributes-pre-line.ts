@@ -2,7 +2,7 @@
  * @Description:
  * @Author: wsy
  * @Date: 2023-10-13 16:59:29
- * @LastEditTime: 2023-10-18 15:04:54
+ * @LastEditTime: 2023-10-20 16:06:49
  * @LastEditors: wsy
  */
 import type { ParserServices, Range, Token } from 'eslint-plugin-vue'
@@ -24,7 +24,7 @@ export type Options = [
 function parseOptions(options: Options[0] | undefined) {
   const defaults = {
     singleline: 3,
-    multiline: 3,
+    multiline: 1,
   }
 
   if (options) {
@@ -56,6 +56,24 @@ function parseOptions(options: Options[0] | undefined) {
 
 function isSingleLine(node): boolean {
   return node.loc.start.line === node.loc.end.line
+}
+
+function groupAttrsByLine(attributes) {
+  const propsPerLine = [[attributes[0]]]
+
+  for (let index = 1; index < attributes.length; index++) {
+    const previous = attributes[index - 1]
+    const current = attributes[index]
+
+    if (previous.loc.end.line === current.loc.start.line) {
+      propsPerLine[propsPerLine.length - 1].push(current)
+    }
+    else {
+      propsPerLine.push([current])
+    }
+  }
+
+  return propsPerLine
 }
 
 export default createEslintRule<Options, MessageIds>({
@@ -163,7 +181,11 @@ export default createEslintRule<Options, MessageIds>({
         }
 
         if (!isSingleLine(node)) {
-          console.log('多行')
+          for (const attrs of groupAttrsByLine(node.attributes)) {
+            if (attrs.length > multilineMaximum) {
+              showErrors(attrs)
+            }
+          }
         }
       },
     })
