@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-wsyc",
-  "version": "1.1.2-beta.1",
+  "version": "1.1.2",
   "description": "Wsy's ESLint plugin",
   "author": "wsypower",
   "license": "ISC",
