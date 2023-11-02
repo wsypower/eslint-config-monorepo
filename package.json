@@ -17,14 +17,13 @@
     "lint": "pnpm eslint ./packages/test/App.vue"
   },
   "devDependencies": {
-    "@types/node": "^20.6.0",
+    "@types/node": "^20.8.10",
     "@wsyc/eslint-config": "workspace:^",
     "bumpp": "^9.2.0",
-    "eslint": "^8.49.0",
-    "eslint-config-turbo": "^1.10.14",
-    "eslint-define-config": "^1.23.0",
-    "eslint-plugin-wsyc": "workspace:^",
-    "turbo": "^1.10.14",
+    "eslint": "^8.52.0",
+    "eslint-config-turbo": "^1.10.16",
+    "eslint-define-config": "^1.24.1",
+    "turbo": "^1.10.16",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0"
   }

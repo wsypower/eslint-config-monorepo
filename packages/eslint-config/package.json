@@ -29,7 +29,7 @@
     "build": "unbuild"
   },
   "peerDependencies": {
-    "eslint": "^8.49.0"
+    "eslint": "^8.52.0"
   },
   "dependencies": {
     "@antfu/eslint-config": "^1.0.0",
