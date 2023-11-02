@@ -32,14 +32,14 @@
     "eslint": "^8.49.0"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^0.41.4",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
-    "@typescript-eslint/parser": "^6.7.2",
+    "@antfu/eslint-config": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
     "@wsyc/eslint-config-vue": "workspace:^",
-    "eslint-plugin-vue": "^9.17.0",
+    "eslint-plugin-vue": "^9.18.1",
     "eslint-plugin-wsyc": "workspace:^"
   },
   "devDependencies": {
-    "eslint": "^8.49.0"
+    "eslint": "^8.52.0"
   }
 }
